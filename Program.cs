@@ -20,7 +20,7 @@ string[] LookingForTarget(string[] givenarray, int targetlength)
         if (givenarray[i].Length <= targetlength) count++;
     }
 
-    string[] outputarray = new string[count];
+    string[] resultarray = new string[count];
     int outputindex = 0;
 
     for (int j = 0; j < givenarray.Length; j++)
@@ -28,10 +28,16 @@ string[] LookingForTarget(string[] givenarray, int targetlength)
 
         if (givenarray[j].Length <= targetlength)
         {
-            outputarray[outputindex] = givenarray[j];
+            resultarray[outputindex] = givenarray[j];
             outputindex++;
         }
     }
-    return outputarray;
+    return resultarray;
 }
 
+int sizelimit = 3;
+
+string [] outpurarray = LookingForTarget(inputarray, sizelimit);
+
+Console.WriteLine("Input: " + PrintToString(inputarray));
+Console.WriteLine("Output: " + PrintToString(outpurarray));
